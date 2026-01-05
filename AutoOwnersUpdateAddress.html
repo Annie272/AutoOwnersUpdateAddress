@@ -132,7 +132,6 @@
           Address Information
         </h3>
 
-
         <!-- Mailing Address 1 -->
         <div class="mb-3">
           <label
@@ -167,160 +166,166 @@
           />
         </div>
 
-        <!-- City and State in one line, but separate fields -->
-<div class="mb-3">
-  <div class="flex space-x-2">
-    <!-- City -->
-    <div class="w-1/2">
-      <label
-        for="mailingCity"
-        class="block text-sm font-medium text-gray-700"
-      >
-        City<span class="star">*</span>
-      </label>
-      <input
-        type="text"
-        id="mailingCity"
-        name="city_1__c"
-        class="mt-1 w-full p-2 border border-gray-300 rounded-lg shadow-sm"
-        autocomplete="off"
-      />
-    </div>
+        <!-- City and State row (modified) -->
+        <div class="mb-3">
+          <div class="flex space-x-2" id="cityStateRow">
+            <!-- City -->
+            <div class="w-1/2" id="cityWrapper">
+              <label
+                for="mailingCity"
+                class="block text-sm font-medium text-gray-700"
+              >
+                City<span class="star">*</span>
+              </label>
+              <input
+                type="text"
+                id="mailingCity"
+                name="city_1__c"
+                class="mt-1 w-full p-2 border border-gray-300 rounded-lg shadow-sm"
+                autocomplete="off"
+              />
+            </div>
 
-    <!-- State picklist -->
-    <div class="w-1/2">
-      <label
-        for="mailingState"
-        class="block text-sm font-medium text-gray-700"
-      >
-        State<span class="star">*</span>
-      </label>
-      <select
-        id="mailingState"
-        name="AutoOwners_State__c"
-        class="mt-1 w-full p-2 border border-gray-300 rounded-lg shadow-sm"
-      >
-        <option value="">--Select--</option>
-             <option value="AK">AK</option>
-  <option value="AL">AL</option>
-  <option value="AR">AR</option>
-  <option value="AZ">AZ</option>
-  <option value="CA">CA</option>
-  <option value="CO">CO</option>
-  <option value="CT">CT</option>
-  <option value="DC">DC</option>
-  <option value="DE">DE</option>
-  <option value="FL">FL</option>
-  <option value="GA">GA</option>
-  <option value="HI">HI</option>
-  <option value="IA">IA</option>
-  <option value="ID">ID</option>
-  <option value="IL">IL</option>
-  <option value="IN">IN</option>
-  <option value="KS">KS</option>
-  <option value="KY">KY</option>
-  <option value="LA">LA</option>
-  <option value="MA">MA</option>
-  <option value="MD">MD</option>
-  <option value="ME">ME</option>
-  <option value="MI">MI</option>
-  <option value="MN">MN</option>
-  <option value="MO">MO</option>
-  <option value="MS">MS</option>
-  <option value="MT">MT</option>
-  <option value="NC">NC</option>
-  <option value="ND">ND</option>
-  <option value="NE">NE</option>
-  <option value="NH">NH</option>
-  <option value="NJ">NJ</option>
-  <option value="NM">NM</option>
-  <option value="NV">NV</option>
-  <option value="NY">NY</option>
-  <option value="OH">OH</option>
-  <option value="OK">OK</option>
-  <option value="OR">OR</option>
-  <option value="PA">PA</option>
-  <option value="RI">RI</option>
-  <option value="SC">SC</option>
-  <option value="SD">SD</option>
-  <option value="TN">TN</option>
-  <option value="TX">TX</option>
-  <option value="UT">UT</option>
-  <option value="VA">VA</option>
-  <option value="VT">VT</option>
-  <option value="WA">WA</option>
-  <option value="WI">WI</option>
-  <option value="WV">WV</option>
-  <option value="WY">WY</option>
-      </select>
-    </div>
-  </div>
-</div>
-
-
+            <!-- State picklist (wrapped for easy hide/show) -->
+            <div class="w-1/2" id="stateWrapper">
+              <label
+                for="mailingState"
+                class="block text-sm font-medium text-gray-700"
+              >
+                State<span class="star">*</span>
+              </label>
+              <select
+                id="mailingState"
+                name="AutoOwners_State__c"
+                class="mt-1 w-full p-2 border border-gray-300 rounded-lg shadow-sm"
+              >
+                <option value="">--Select--</option>
+                <option value="AK">AK</option>
+                <option value="AL">AL</option>
+                <option value="AR">AR</option>
+                <option value="AZ">AZ</option>
+                <option value="CA">CA</option>
+                <option value="CO">CO</option>
+                <option value="CT">CT</option>
+                <option value="DC">DC</option>
+                <option value="DE">DE</option>
+                <option value="FL">FL</option>
+                <option value="GA">GA</option>
+                <option value="HI">HI</option>
+                <option value="IA">IA</option>
+                <option value="ID">ID</option>
+                <option value="IL">IL</option>
+                <option value="IN">IN</option>
+                <option value="KS">KS</option>
+                <option value="KY">KY</option>
+                <option value="LA">LA</option>
+                <option value="MA">MA</option>
+                <option value="MD">MD</option>
+                <option value="ME">ME</option>
+                <option value="MI">MI</option>
+                <option value="MN">MN</option>
+                <option value="MO">MO</option>
+                <option value="MS">MS</option>
+                <option value="MT">MT</option>
+                <option value="NC">NC</option>
+                <option value="ND">ND</option>
+                <option value="NE">NE</option>
+                <option value="NH">NH</option>
+                <option value="NJ">NJ</option>
+                <option value="NM">NM</option>
+                <option value="NV">NV</option>
+                <option value="NY">NY</option>
+                <option value="OH">OH</option>
+                <option value="OK">OK</option>
+                <option value="OR">OR</option>
+                <option value="PA">PA</option>
+                <option value="RI">RI</option>
+                <option value="SC">SC</option>
+                <option value="SD">SD</option>
+                <option value="TN">TN</option>
+                <option value="TX">TX</option>
+                <option value="UT">UT</option>
+                <option value="VA">VA</option>
+                <option value="VT">VT</option>
+                <option value="WA">WA</option>
+                <option value="WI">WI</option>
+                <option value="WV">WV</option>
+                <option value="WY">WY</option>
+              </select>
+            </div>
+          </div>
+        </div>
 
         <!-- Zip (5 + 4 fields) -->
         <div class="mb-3">
-  <label
-    for="mailingZip5"
-    class="block text-sm font-medium text-gray-700"
-  >
-    Zip<span class="star">*</span>
-  </label>
-  <div class="flex items-center space-x-2">
-    <input
-      type="text"
-      id="mailingZip5"
-      name="Zip_Auto_Owners_1__c"
-      class="mt-1 w-1/2 p-2 border border-gray-300 rounded-lg shadow-sm"
-      maxlength="5"
-      autocomplete="off"
-    />
-    <span class="mt-2">-</span>
-    <input
-      type="text"
-      id="mailingZip4"
-      name="Zip_Auto_Owners_2__c"
-      class="mt-1 w-1/2 p-2 border border-gray-300 rounded-lg shadow-sm"
-      maxlength="4"
-      autocomplete="off"
-    />
-  </div>
-</div>
+          <label
+            for="mailingZip5"
+            class="block text-sm font-medium text-gray-700"
+          >
+            Zip<span class="star">*</span>
+          </label>
+          <div class="flex items-center space-x-2">
+            <input
+              type="text"
+              id="mailingZip5"
+              name="Zip_Auto_Owners_1__c"
+              class="mt-1 w-1/2 p-2 border border-gray-300 rounded-lg shadow-sm"
+              maxlength="5"
+              autocomplete="off"
+            />
+            <span class="mt-2">-</span>
+            <input
+              type="text"
+              id="mailingZip4"
+              name="Zip_Auto_Owners_2__c"
+              class="mt-1 w-1/2 p-2 border border-gray-300 rounded-lg shadow-sm"
+              maxlength="4"
+              autocomplete="off"
+            />
+          </div>
+        </div>
 
         <!-- Country -->
         <div class="mb-3">
-  <label
-    for="mailingCountry"
-    class="block text-sm font-medium text-gray-700"
-  >
-    Country<span class="star">*</span>
-  </label>
-  <select
-    id="mailingCountry"
-    name="Country__c"
-    class="mt-1 w-full p-2 border border-gray-300 rounded-lg shadow-sm"
-  >
-     <option value="">--Select--</option>
-  <option value="United States of America" selected>United States of America</option>
-  <option value="Canada">Canada</option>
-  <option value="Mexico">Mexico</option>
-  <option value="Other Alien Countries">Other Alien Countries</option>
-  <option value="American Samoa">American Samoa</option>
-  <option value="Armed Forces Americas">Armed Forces Americas</option>
-  <option value="Armed Forces Other">Armed Forces Other</option>
-  <option value="Armed Forces Pacific">Armed Forces Pacific</option>
-  <option value="District of Columbia">District of Columbia</option>
-  <option value="Federated States of Micronesia">Federated States of Micronesia</option>
-  <option value="Guam">Guam</option>
-  <option value="Guantanamo Bay (US Naval Base)">Guantanamo Bay (US Naval Base)</option>
-  <option value="Marshall Islands">Marshall Islands</option>
-  <option value="Northern Mariana Islands">Northern Mariana Islands</option>
-  <option value="Palau">Palau</option>
-  <option value="Puerto Rico">Puerto Rico</option>
-  <option value="US Virgin Islands">US Virgin Islands</option>
-  </select>
-</div>
+          <label
+            for="mailingCountry"
+            class="block text-sm font-medium text-gray-700"
+          >
+            Country<span class="star">*</span>
+          </label>
+          <select
+            id="mailingCountry"
+            name="Country__c"
+            class="mt-1 w-full p-2 border border-gray-300 rounded-lg shadow-sm"
+          >
+            <option value="">--Select--</option>
+            <option value="United States of America" selected>
+              United States of America
+            </option>
+            <option value="Canada">Canada</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Other Alien Countries">Other Alien Countries</option>
+            <option value="American Samoa">American Samoa</option>
+            <option value="Armed Forces Americas">Armed Forces Americas</option>
+            <option value="Armed Forces Other">Armed Forces Other</option>
+            <option value="Armed Forces Pacific">Armed Forces Pacific</option>
+            <option value="District of Columbia">District of Columbia</option>
+            <option value="Federated States of Micronesia">
+              Federated States of Micronesia
+            </option>
+            <option value="Guam">Guam</option>
+            <option value="Guantanamo Bay (US Naval Base)">
+              Guantanamo Bay (US Naval Base)
+            </option>
+            <option value="Marshall Islands">Marshall Islands</option>
+            <option value="Northern Mariana Islands">
+              Northern Mariana Islands
+            </option>
+            <option value="Palau">Palau</option>
+            <option value="Puerto Rico">Puerto Rico</option>
+            <option value="US Virgin Islands">US Virgin Islands</option>
+          </select>
+        </div>
 
         <!-- Primary Garage Address? -->
         <div class="mb-3">
@@ -328,7 +333,9 @@
             for="hasPrimaryGarage"
             class="block text-sm font-medium text-gray-700"
           >
-        Do you want to change the garaging location<span class="star">*</span>
+            Do you want to change the garaging location<span class="star"
+              >*</span
+            >
           </label>
           <select
             id="hasPrimaryGarage"
@@ -347,7 +354,9 @@
             for="mailSameAsGarage"
             class="block text-sm font-medium text-gray-700"
           >
-            Is Mailing address same as garaging address?<span class="star">*</span>
+            Is Mailing address same as garaging address?<span class="star"
+              >*</span
+            >
           </label>
           <select
             id="mailSameAsGarage"
@@ -413,36 +422,34 @@
             />
           </div>
 
-          <!-- Garaging Zip (5 + 4) -->
           <!-- Garaging Zip Code (5 + 4 with hyphen) -->
-<div class="mb-3">
-  <label
-    for="garagingZip5"
-    class="block text-sm font-medium text-gray-700"
-  >
-    Garaging Zip Code<span class="star">*</span>
-  </label>
-  <div class="flex items-center space-x-2">
-    <input
-      type="text"
-      id="garagingZip5"
-      name="Zip_Code_1_GL__c"
-      class="mt-1 w-1/2 p-2 border border-gray-300 rounded-lg shadow-sm"
-      maxlength="5"
-      autocomplete="off"
-    />
-    <span class="mt-2">-</span>
-    <input
-      type="text"
-      id="garagingZip4"
-      name="Zip_Code_2_GL__c"
-      class="mt-1 w-1/2 p-2 border border-gray-300 rounded-lg shadow-sm"
-      maxlength="4"
-      autocomplete="off"
-    />
-  </div>
-</div>
-
+          <div class="mb-3">
+            <label
+              for="garagingZip5"
+              class="block text-sm font-medium text-gray-700"
+            >
+              Garaging Zip Code<span class="star">*</span>
+            </label>
+            <div class="flex items-center space-x-2">
+              <input
+                type="text"
+                id="garagingZip5"
+                name="Zip_Code_1_GL__c"
+                class="mt-1 w-1/2 p-2 border border-gray-300 rounded-lg shadow-sm"
+                maxlength="5"
+                autocomplete="off"
+              />
+              <span class="mt-2">-</span>
+              <input
+                type="text"
+                id="garagingZip4"
+                name="Zip_Code_2_GL__c"
+                class="mt-1 w-1/2 p-2 border border-gray-300 rounded-lg shadow-sm"
+                maxlength="4"
+                autocomplete="off"
+              />
+            </div>
+          </div>
         </div>
       </div>
 
@@ -547,6 +554,12 @@
           "garagingFieldsWrapper"
         );
 
+        // City/State/Country elements for toggle
+        const mailingCountry = document.getElementById("mailingCountry");
+        const cityWrapper = document.getElementById("cityWrapper");
+        const stateWrapper = document.getElementById("stateWrapper");
+        const mailingState = document.getElementById("mailingState");
+
         // Date picker initialization
         new Pikaday({
           field: document.getElementById("00NU7000005zuLl"),
@@ -562,6 +575,29 @@
             return new Date(year, month - 1, day);
           },
         });
+
+        // Toggle State visibility and City width based on Country
+        function updateCityStateVisibility() {
+          const isUSA =
+            mailingCountry.value === "United States of America";
+
+          if (isUSA) {
+            // Show state, city half width
+            stateWrapper.classList.remove("hidden");
+            cityWrapper.classList.remove("w-full");
+            cityWrapper.classList.add("w-1/2");
+          } else {
+            // Hide state, clear its value, city full width
+            stateWrapper.classList.add("hidden");
+            mailingState.value = "";
+            cityWrapper.classList.remove("w-1/2");
+            cityWrapper.classList.add("w-full");
+          }
+        }
+
+        mailingCountry.addEventListener("change", updateCityStateVisibility);
+        // Initialize on load (respects default selected country)
+        updateCityStateVisibility();
 
         // Address dependency logic
         hasPrimaryGarage.addEventListener("change", function () {
@@ -676,6 +712,14 @@
               if (!val || !dateRegex.test(val)) {
                 missing.push(field.label);
               }
+            } else if (field.id === "mailingState") {
+              // State required only when Country is USA
+              const isUSA =
+                mailingCountry.value === "United States of America";
+              const input = document.getElementById(field.id);
+              if (isUSA && !input.value.trim()) {
+                missing.push(field.label);
+              }
             } else if (field.conditional) {
               // mailSameAsGarage only required if hasPrimaryGarage = Yes
               if (hasPrimaryGarage.value === "Yes") {
@@ -742,6 +786,12 @@
               const dateRegex =
                 /^(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/(1[0-9]{3}|2[0-9]{3}|30[0-9]{2})$/;
               if (!val || !dateRegex.test(val)) isMissing = true;
+            } else if (field.id === "mailingState") {
+              const isUSA =
+                mailingCountry.value === "United States of America";
+              if (isUSA && !val) {
+                isMissing = true;
+              }
             } else if (field.conditional) {
               if (hasPrimaryGarage.value === "Yes" && !val) {
                 isMissing = true;
