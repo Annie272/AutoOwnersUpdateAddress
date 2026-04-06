@@ -826,13 +826,12 @@ function getSelectedRadioValue(name) {
 
           const formCapturedDataStr = completedData.join("\n");
           const formMissingDataStr = missingData.join("\n");
-          // Build allFormData JSON (same exact pattern)
+// Build allFormData JSON
 const allFormData = {
   Email: document.getElementById("email")?.value || "",
-  Is_this_a_quote_or_a_change_request: getSelectedRadioValue("Is_this_a_quote_or_a_change_request__c"),
+  Request_Type: getSelectedRadioValue("Is_this_a_quote_or_a_change_request__c"),
   Policy_Number: document.getElementById("00NU7000005zuX3")?.value || "",
   Effective_Date: formatDateToISO(document.getElementById("00NU7000005zuLl")?.value),
-  // Mailing Address
   Mailing_Address_1: document.getElementById("mailingAddress1")?.value || "",
   Mailing_Address_2: document.getElementById("mailingAddress2")?.value || "",
   Mailing_City: document.getElementById("mailingCity")?.value || "",
@@ -840,18 +839,17 @@ const allFormData = {
   Mailing_Zip_5: document.getElementById("mailingZip5")?.value || "",
   Mailing_Zip_4: document.getElementById("mailingZip4")?.value || "",
   Mailing_Country: document.getElementById("mailingCountry")?.value || "",
-  // Garaging
-  Has_primary_garage_address: document.getElementById("hasPrimaryGarage")?.value || "",
-  Is_Mailing_same_as_Garaging: document.getElementById("mailSameAsGarage")?.value || "",
+  Change_Garaging_Location: document.getElementById("hasPrimaryGarage")?.value || "",
+  Mailing_Same_As_Garaging: document.getElementById("mailSameAsGarage")?.value || "",
   Garaging_Address_1: document.getElementById("garagingAddress1")?.value || "",
   Garaging_Address_2: document.getElementById("garagingAddress2")?.value || "",
   Garaging_City: document.getElementById("garagingCity")?.value || "",
   Garaging_Zip_5: document.getElementById("garagingZip5")?.value || "",
   Garaging_Zip_4: document.getElementById("garagingZip4")?.value || "",
-  // Hidden fields (IMPORTANT - same as previous forms)
   Carrier: "Auto Owners",
   Policy_Action: document.getElementById("00NU7000005zuNN")?.value || ""
 };
+
 document.getElementById("allFormData").value = JSON.stringify(allFormData);
 
           const formDataJsonInput = document.getElementById("formDataJson");
